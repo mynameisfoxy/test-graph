@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+  .graph-div {
+  height: 400px;
+  width: 600px;
+  border-bottom: 2px solid black;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-end;
+}
+.point {
+  background: black;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  margin-left: 10px;
+  height: 2px;
+  width: 20px;
+  display: inline-block;
+}
+.point:first-child {
+  margin-left: 0px!important;
+}
+  </style>
+  <title>Document</title>
+</head>
+<body>
+  <div class ="graph-div" id="graph">
+    
+  </div>
+  <script>
+  var mas = [5,8,2,1,15,2,3,5,9,11,10,4,3,14,1,7,10,3,2,13];
+
+function buildGraph(massive) {
+  massive.forEach(element => {
+    var div = document.createElement('div')
+    div.className = 'point point-' + element;
+    div.style.height = element*15+"px";
+    if (element > 10) {
+        div.style.backgroundColor = "red";
+        } else 
+    if (element <= 10 && element >= 6) {
+        div.style.backgroundColor = "yellow";
+    } else
+    if (element <= 5) {
+        div.style.backgroundColor = "green";
+    }
+    graph.appendChild(div);
+  });
+}
+
+buildGraph(mas);
+  </script>
+</body>
+</html>
